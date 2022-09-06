@@ -1,0 +1,52 @@
+@use "globals" as g;
+// @use "typo";
+@use "top";
+@use "bottom";
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
+  font-family: g.$league;
+  position: relative;
+}
+
+// body::before {
+//   content: url("../images/bg-pattern-top-mobile.svg");
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+
+//   @include g.breakpoint(tab) {
+//     content: url("../images/bg-pattern-top-desktop.svg");
+//   }
+// }
+// body::after {
+//   content: url("../images/bg-pattern-bottom-mobile.svg");
+//   position: absolute;
+//   bottom: 0;
+//   right: 0;
+
+//   @include g.breakpoint(tab) {
+//     content: url("../images/bg-pattern-bottom-desktop.svg");
+//   }
+// }
+
+main {
+  width: min(350px, 85%);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  gap: 2em;
+
+  @include g.breakpoint(tab) {
+    width: min(1100px, 85%);
+    gap: 4em;
+  }
+  @include g.breakpoint(pc) {
+    gap: 6em;
+  }
+}

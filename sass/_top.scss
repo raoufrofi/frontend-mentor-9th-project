@@ -1,0 +1,94 @@
+@use "globals" as g;
+
+.top {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  gap: 1.5em;
+
+  @include g.breakpoint(tab) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    align-items: center;
+    gap: 5em;
+  }
+
+  header {
+    text-align: center;
+
+    @include g.breakpoint(tab) {
+      text-align: left;
+      width: 80%;
+    }
+
+    h1 {
+      color: g.$dark-magenta;
+      margin-bottom: 0.5em;
+
+      @include g.breakpoint(tab) {
+        font-size: 40px;
+      }
+      @include g.breakpoint(pc) {
+        font-size: 48px;
+      }
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.5;
+      color: g.$dark-magenta;
+
+      @include g.breakpoint(tab) {
+        font-size: 16px;
+      }
+      @include g.breakpoint(pc) {
+        font-size: 18px;
+      }
+    }
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1em;
+    color: g.$dark-magenta;
+
+    @include g.breakpoint(tab) {
+      li:nth-child(1) {
+        align-self: flex-start;
+      }
+      li:nth-child(2) {
+        align-self: center;
+      }
+      li:nth-child(3) {
+        align-self: flex-end;
+      }
+    }
+
+    li {
+      background-color: g.$light-grayish-magenta;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0.8em;
+      padding: 1em;
+
+      @include g.breakpoint(tab) {
+        flex-direction: row;
+        gap: 2em;
+      }
+
+      figure {
+        display: flex;
+        width: 80px;
+        gap: 0.2em;
+      }
+      p {
+        font-weight: bold;
+      }
+    }
+  }
+}

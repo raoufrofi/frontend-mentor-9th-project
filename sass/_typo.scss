@@ -1,0 +1,23 @@
+@use "globals" as g;
+
+h1 {
+  position: absolute;
+  top: -50%;
+  display: none;
+}
+
+h2,
+.h2 {
+  font-family: g.$big-shoulder;
+  font-size: 28px;
+  text-transform: uppercase;
+  color: g.$very-light-gray;
+}
+
+p,
+.p {
+  font-family: g.$lexend;
+  color: g.$white-paragraphs;
+  font-size: 14px;
+  line-height: 2;
+}
